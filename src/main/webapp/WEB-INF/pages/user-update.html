@@ -17,10 +17,10 @@
             <input type="text" th:field="*{email}" id="email" placeholder="E-mail">
             <label for="email">E-mail</label>
             <br>
-            <input type="text" th:field="*{phoneNumber}" id="phoneNumber" placeholder="Phone Number">
-            <label for="phoneNumber">Phone Number</label>
-            <br>
             <input type="submit" value="Update User">
+            <br>
+            <form th:method="POST" th:action="@{/logout}">
+                <input type="submit" value="Logout"/>
         </form>
     </body>
 </html>

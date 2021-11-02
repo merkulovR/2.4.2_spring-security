@@ -23,5 +23,8 @@
 </form>
 <hr/>
 <a th:href="@{/users}">All users</a>
+<br>
+<form th:method="POST" th:action="@{/logout}">
+    <input type="submit" value="Logout"/>
 </body>
 </html>

@@ -16,7 +16,6 @@
             <th>First name</th>
             <th>Last name</th>
             <th>E-mail</th>
-            <th>Phone number</th>
         </tr>
         </thead>
         <tbody>
@@ -25,7 +24,6 @@
             <td th:text="${user.getName()}"></td>
             <td th:text="${user.getLastName()}"></td>
             <td th:text="${user.getEmail()}"></td>
-            <td th:text="${user.getPhoneNumber()}"></td>
             <td><a th:href="@{user-update/{id}(id=${user.getId()})}">Edit</a></td>
             <td><form th:method="DELETE" th:action="@{/user-delete/{id}(id=${user.getId()})}">
                 <input type="submit" value="Delete"/>
@@ -35,6 +33,9 @@
         </tbody>
     </table>
     <p><a href="/user-create">Create user</a></p>
+    <br>
+    <form th:method="POST" th:action="@{/logout}">
+        <input type="submit" value="Logout"/>
 </div>
 </body>
 </html>

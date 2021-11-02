@@ -37,4 +37,11 @@ public class UserDaoImpl implements UserDao {
     public void delete(Long id) {
         entityManager.remove(getUser(id));
     }
+
+    @Override
+    public User findByUsername(String username) {
+        return entityManager.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class)
+                .setParameter("username", username)
+                .getSingleResult();
+    }
 }
